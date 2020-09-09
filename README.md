@@ -1,3 +1,18 @@
+# Amazon clone
+
+![Amazon](http://logok.org/wp-content/uploads/2015/01/Amazon-logo-1024x768.png)
+![enter image description here](https://www.metaltoad.com/sites/default/files/styles/large_personal_photo_870x500_/public/2020-05/react-js-blog-header.png?itok=VbfDeSgJ)
+
+This nice **React** application is a clone of basic Amazon website.
+
+- Homepage: product listing, add to basket
+
+- Basket page (checkout): remove from basket, checkout
+
+- Login: using Firebase
+
+## Demo
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -7,22 +22,27 @@ In the project directory, you can run:
 ### `npm start`
 
 Runs the app in the development mode.<br />
+
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br />
+
 You will also see any lint errors in the console.
 
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.<br />
+
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
 
 Builds the app for production to the `build` folder.<br />
+
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
 The build is minified and the filenames include the hashes.<br />
+
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
