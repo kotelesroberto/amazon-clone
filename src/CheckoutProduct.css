@@ -33,4 +33,5 @@
 
 .checkoutProduct__rating {
   display: flex;
+  color: orange;
 }
