@@ -8,6 +8,7 @@ import Login from "./Login";
 import { auth } from "./firebase";
 import { useStateValue } from "./StateProvider";
 import Payment from "./Payment";
+import Footer from "./Footer";
 
 function App() {
   const [{ user }, dispatch] = useStateValue();
@@ -46,15 +47,18 @@ function App() {
           <Route path="/checkout">
             <Header />
             <Checkout />
+            <Footer />
           </Route>
           <Route path="/payment">
             <Header />
             <Payment />
+            <Footer />
           </Route>
           <Route path="/">
             {/* This is the default route, always rendered if path is wrong in URL. This Route is always at the bottom. */}
             <Header />
             <Home />
+            <Footer />
           </Route>
         </Switch>
       </div>
