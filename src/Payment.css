@@ -29,9 +29,17 @@
 }
 
 .payment__address,
-.payment__items {
+.payment__items,
+.payment__details {
   flex: 0.8;
 }
 
+.payment__address {
+}
+.payment__items {
+}
 .payment__details {
+}
+
+.payment__priceContainer {
 }
