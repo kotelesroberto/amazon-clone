@@ -8,6 +8,7 @@ function Footer() {
         <div className="footer__section">
           <a
             target="_blank"
+            rel="noopener noreferrer"
             href="https://music.amazon.com/?ref=dm_aff_amz_com"
           >
             <div className="footer__option">
@@ -20,6 +21,7 @@ function Footer() {
 
           <a
             target="_blank"
+            rel="noopener noreferrer"
             href="https://advertising.amazon.com/?ref=footer_advtsing_amzn_com"
           >
             <div className="footer__option">
@@ -32,6 +34,7 @@ function Footer() {
 
           <a
             target="_blank"
+            rel="noopener noreferrer"
             href="https://www.amazon.com/STRING-subnav_primephotos_amazondrive/b?ie=UTF8&node=15547130011&ref_=us_footer_drive"
           >
             <div className="footer__option">
@@ -42,7 +45,11 @@ function Footer() {
             </div>
           </a>
 
-          <a target="_blank" href="https://www.alexa.com/">
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.alexa.com/"
+          >
             <div className="footer__option">
               <span className="footer__optionLineOne">Alexa</span>
               <span className="footer__optionLineTwo">
@@ -51,7 +58,11 @@ function Footer() {
             </div>
           </a>
 
-          <a target="_blank" href="https://videodirect.amazon.com/home/landing">
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://videodirect.amazon.com/home/landing"
+          >
             <div className="footer__option">
               <span className="footer__optionLineOne">Prime Video Direct</span>
               <span className="footer__optionLineTwo">
@@ -60,7 +71,11 @@ function Footer() {
             </div>
           </a>
 
-          <a target="_blank" href="https://videodirect.amazon.com/home/landing">
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://videodirect.amazon.com/home/landing"
+          >
             <div className="footer__option">
               <span className="footer__optionLineOne">Prime Video Direct</span>
               <span className="footer__optionLineTwo">
@@ -69,7 +84,11 @@ function Footer() {
             </div>
           </a>
 
-          <a target="_blank" href="https://videodirect.amazon.com/home/landing">
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://videodirect.amazon.com/home/landing"
+          >
             <div className="footer__option">
               <span className="footer__optionLineOne">Prime Video Direct</span>
               <span className="footer__optionLineTwo">
@@ -82,6 +101,7 @@ function Footer() {
         <div className="footer__section">
           <a
             target="_blank"
+            rel="noopener noreferrer"
             href="https://music.amazon.com/?ref=dm_aff_amz_com"
           >
             <div className="footer__option">
@@ -94,6 +114,7 @@ function Footer() {
 
           <a
             target="_blank"
+            rel="noopener noreferrer"
             href="https://advertising.amazon.com/?ref=footer_advtsing_amzn_com"
           >
             <div className="footer__option">
@@ -106,6 +127,7 @@ function Footer() {
 
           <a
             target="_blank"
+            rel="noopener noreferrer"
             href="https://www.amazon.com/STRING-subnav_primephotos_amazondrive/b?ie=UTF8&node=15547130011&ref_=us_footer_drive"
           >
             <div className="footer__option">
@@ -116,7 +138,11 @@ function Footer() {
             </div>
           </a>
 
-          <a target="_blank" href="https://www.alexa.com/">
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.alexa.com/"
+          >
             <div className="footer__option">
               <span className="footer__optionLineOne">Alexa</span>
               <span className="footer__optionLineTwo">
@@ -125,7 +151,11 @@ function Footer() {
             </div>
           </a>
 
-          <a target="_blank" href="https://videodirect.amazon.com/home/landing">
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://videodirect.amazon.com/home/landing"
+          >
             <div className="footer__option">
               <span className="footer__optionLineOne">Prime Video Direct</span>
               <span className="footer__optionLineTwo">
@@ -134,7 +164,11 @@ function Footer() {
             </div>
           </a>
 
-          <a target="_blank" href="https://videodirect.amazon.com/home/landing">
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://videodirect.amazon.com/home/landing"
+          >
             <div className="footer__option">
               <span className="footer__optionLineOne">Prime Video Direct</span>
               <span className="footer__optionLineTwo">
@@ -143,7 +177,11 @@ function Footer() {
             </div>
           </a>
 
-          <a target="_blank" href="https://videodirect.amazon.com/home/landing">
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://videodirect.amazon.com/home/landing"
+          >
             <div className="footer__option">
               <span className="footer__optionLineOne">Prime Video Direct</span>
               <span className="footer__optionLineTwo">
@@ -156,6 +194,7 @@ function Footer() {
         <div className="footer__section">
           <a
             target="_blank"
+            rel="noopener noreferrer"
             href="https://music.amazon.com/?ref=dm_aff_amz_com"
           >
             <div className="footer__option">
@@ -168,6 +207,7 @@ function Footer() {
 
           <a
             target="_blank"
+            rel="noopener noreferrer"
             href="https://advertising.amazon.com/?ref=footer_advtsing_amzn_com"
           >
             <div className="footer__option">
@@ -180,6 +220,7 @@ function Footer() {
 
           <a
             target="_blank"
+            rel="noopener noreferrer"
             href="https://www.amazon.com/STRING-subnav_primephotos_amazondrive/b?ie=UTF8&node=15547130011&ref_=us_footer_drive"
           >
             <div className="footer__option">
@@ -190,7 +231,11 @@ function Footer() {
             </div>
           </a>
 
-          <a target="_blank" href="https://www.alexa.com/">
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.alexa.com/"
+          >
             <div className="footer__option">
               <span className="footer__optionLineOne">Alexa</span>
               <span className="footer__optionLineTwo">
@@ -199,7 +244,11 @@ function Footer() {
             </div>
           </a>
 
-          <a target="_blank" href="https://videodirect.amazon.com/home/landing">
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://videodirect.amazon.com/home/landing"
+          >
             <div className="footer__option">
               <span className="footer__optionLineOne">Prime Video Direct</span>
               <span className="footer__optionLineTwo">
@@ -208,7 +257,11 @@ function Footer() {
             </div>
           </a>
 
-          <a target="_blank" href="https://videodirect.amazon.com/home/landing">
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://videodirect.amazon.com/home/landing"
+          >
             <div className="footer__option">
               <span className="footer__optionLineOne">Prime Video Direct</span>
               <span className="footer__optionLineTwo">
@@ -217,7 +270,11 @@ function Footer() {
             </div>
           </a>
 
-          <a target="_blank" href="https://videodirect.amazon.com/home/landing">
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://videodirect.amazon.com/home/landing"
+          >
             <div className="footer__option">
               <span className="footer__optionLineOne">Prime Video Direct</span>
               <span className="footer__optionLineTwo">

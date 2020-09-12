@@ -9,6 +9,7 @@ import Home from "./Home";
 import Checkout from "./Checkout";
 import Login from "./Login";
 import Payment from "./Payment";
+import Orders from "./Orders";
 import Footer from "./Footer";
 
 // firebase
@@ -67,6 +68,11 @@ function App() {
             <Elements stripe={promise}>
               <Payment />
             </Elements>
+            <Footer />
+          </Route>
+          <Route path="/orders">
+            <Header />
+            <Orders />
             <Footer />
           </Route>
           <Route path="/">

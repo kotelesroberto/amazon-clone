@@ -1,11 +1,17 @@
 import React, { useEffect, useState } from "react";
 import "./Payment.css";
+
 import { useStateValue } from "./StateProvider";
 import CheckoutProduct from "./CheckoutProduct";
 import { Link, useHistory } from "react-router-dom";
-import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { getBasketTotal } from "./reducer";
+
 import CurrencyFormat from "react-currency-format";
+
+// stripe
+import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
+
+// axios
 import axios from "./axios"; // local file axios
 
 function Payment() {
@@ -22,6 +28,7 @@ function Payment() {
   const stripe = useStripe();
   const elements = useElements();
 
+  // design of card input
   const CARD_OPTIONS = {
     iconStyle: "solid",
     style: {
@@ -52,10 +59,8 @@ function Payment() {
         url: `/payments/create?total=${getBasketTotal(basket) * 100}`,
       }); //.then((response) => {});
 
-      setClientSecret(response.data.clientSecret);
-
       // clientSecret will be associated an amount (controlling)
-      // setClientSecret(response.data.clientSecret))
+      setClientSecret(response.data.clientSecret);
     };
 
     getClientSecret();
@@ -80,8 +85,17 @@ function Payment() {
         payment_method: {
           card: elements.getElement(CardElement),
           billing_details: {
+            address: {
+              city: null,
+              country: null,
+              line1: null,
+              line2: null,
+              postal_code: null,
+              state: null,
+            },
             name: user?.email,
             email: user?.email,
+            phone: null,
           },
         },
       })
@@ -93,6 +107,10 @@ function Payment() {
         setSucceeded(true);
         setError(null);
         setProcessing(false);
+
+        dispatch({
+          type: "EMPTY_BASKET",
+        });
 
         //as we don't want to permit the users going back to the payment page again, after payment let's use HISTORY REPLACE
         history.replace("/orders");
@@ -163,7 +181,7 @@ function Payment() {
                 <button
                   disabled={!stripe || processing || disabled || succeeded}
                 >
-                  <span>{processing ? "<p>Processing</p>" : "Buy now"}</span>
+                  <span>{processing ? "Processing..." : "Buy now"}</span>
                 </button>
               </div>
 
