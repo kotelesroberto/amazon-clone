@@ -8,6 +8,12 @@
   background-color: #f3f3f3;
   border: 1px solid #ddd;
   border-radius: 3px;
+  transition: all 0.3s ease-in-out;
+  transform: scale(1);
+}
+
+.subtotal:hover {
+  transform: scale(1.05);
 }
 
 .subtotal__gift {

@@ -6,6 +6,8 @@ import CheckoutProduct from "./CheckoutProduct";
 import { Link, useHistory } from "react-router-dom";
 import { getBasketTotal } from "./reducer";
 
+import { db } from "./firebase";
+
 import CurrencyFormat from "react-currency-format";
 
 // stripe
@@ -68,6 +70,7 @@ function Payment() {
 
   // stripe
   console.log("THE SECRET IS >>> ", clientSecret);
+  console.log("USER IS >>>>", user);
 
   const handleSubmit = async (event) => {
     // do all fancy stripe stuff...
@@ -104,6 +107,19 @@ function Payment() {
       // (response) is exploded as ({ paymentIntent }) in the next
       .then(({ paymentIntent }) => {
         // paymentIntent = payment confirmation
+
+        // push into database
+        db.collection("users") //reach into database collection of users
+          .doc(user?.uid) // choose this user
+          .collection("orders") // choose their orders
+          .doc(paymentIntent.id) // wanna creat a document with payment id
+          .set({
+            // add all of these information
+            basket: basket,
+            amount: 200,
+          });
+
+        // set flags
         setSucceeded(true);
         setError(null);
         setProcessing(false);
@@ -151,6 +167,8 @@ function Payment() {
           <div className="payment__items">
             {basket?.map((item) => (
               <CheckoutProduct
+                key={item.addedToBasket}
+                addedToBasket={item.addedToBasket}
                 id={item.id}
                 title={item.title}
                 image={item.image}
@@ -169,6 +187,8 @@ function Payment() {
           <div className="payment__details">
             <form action="" onSubmit={handleSubmit}>
               <CardElement onChange={handleChange} options={CARD_OPTIONS} />
+              {error && <div className="payment__error">{error}</div>}
+
               <div className="payment__priceContainer">
                 <CurrencyFormat
                   renderText={(value) => <h3>Order Total: {value}</h3>}
@@ -179,13 +199,13 @@ function Payment() {
                   prefix={"$"}
                 />
                 <button
-                  disabled={!stripe || processing || disabled || succeeded}
+                  disabled={
+                    !stripe || processing || disabled || succeeded || error
+                  }
                 >
                   <span>{processing ? "Processing..." : "Buy now"}</span>
                 </button>
               </div>
-
-              {error && <div>{error}</div>}
             </form>
           </div>
         </div>
