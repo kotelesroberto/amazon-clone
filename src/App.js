@@ -1,14 +1,28 @@
 import React, { useEffect } from "react";
 import "./App.css";
+
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { useStateValue } from "./StateProvider";
+
 import Header from "./Header";
 import Home from "./Home";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Checkout from "./Checkout";
 import Login from "./Login";
-import { auth } from "./firebase";
-import { useStateValue } from "./StateProvider";
 import Payment from "./Payment";
+import Orders from "./Orders";
 import Footer from "./Footer";
+
+// firebase
+import { auth } from "./firebase";
+
+// stripe
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
+
+// Init stripe with publishable key
+const promise = loadStripe(
+  "pk_test_51HQESUBUefnWIo5As3Lk53wdftcdEmxEpmlBRXeOvwm157A7KKllehk5t9QWCXmAqO2N1sWsix0PxDrVImFEYOrq00okfKD2kx"
+);
 
 function App() {
   const [{ user }, dispatch] = useStateValue();
@@ -21,7 +35,6 @@ function App() {
 
       if (authUser) {
         // the user just loggen in / the user was logged in
-
         dispatch({
           type: "SET_USER",
           user: authUser,
@@ -37,7 +50,6 @@ function App() {
   }, []);
 
   return (
-    // BEM
     <Router>
       <div className="App">
         <Switch>
@@ -51,7 +63,15 @@ function App() {
           </Route>
           <Route path="/payment">
             <Header />
-            <Payment />
+
+            <Elements stripe={promise}>
+              <Payment />
+            </Elements>
+            <Footer />
+          </Route>
+          <Route path="/orders">
+            <Header />
+            <Orders />
             <Footer />
           </Route>
           <Route path="/">
