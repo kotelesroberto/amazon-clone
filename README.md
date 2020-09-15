@@ -1,6 +1,7 @@
 # Amazon clone
 
 ![Amazon](http://logok.org/wp-content/uploads/2015/01/Amazon-logo-1024x768.png)
+
 ![enter image description here](https://www.metaltoad.com/sites/default/files/styles/large_personal_photo_870x500_/public/2020-05/react-js-blog-header.png?itok=VbfDeSgJ)
 
 This nice **React** application is a clone of basic Amazon website.
@@ -14,6 +15,18 @@ This nice **React** application is a clone of basic Amazon website.
 ## Demo
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Services and main technologies used in this project
+
+- CSS3
+- JavaScript
+- React
+- React Router
+- React
+- Stripe (payment)
+- Firebase (storage and database)
+- Axios
+- Express server
 
 ## Available Scripts
 
