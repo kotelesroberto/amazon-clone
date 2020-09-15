@@ -38,7 +38,7 @@ function Login() {
       })
       .catch((error) => {
         // Handle Errors here.
-        if (error.code == "auth/weak-password") {
+        if (error.code === "auth/weak-password") {
           alert("The password is too weak.");
         } else {
           alert(error.message);

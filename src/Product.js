@@ -14,6 +14,7 @@ function Product({ id, title, image, price, rating }) {
     dispatch({
       type: "ADD_TO_BASKET",
       item: {
+        addedToBasket: Date.now(),
         id: id,
         title: title,
         image: image,
@@ -35,7 +36,7 @@ function Product({ id, title, image, price, rating }) {
           {Array(rating)
             .fill()
             .map((_, i) => (
-              <p>
+              <p key={i}>
                 <StarIcon />
               </p>
             ))}

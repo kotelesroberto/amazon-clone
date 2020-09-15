@@ -2,6 +2,12 @@
   display: flex;
   margin-top: 15px;
   margin-bottom: 15px;
+  padding: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.checkoutProduct:hover {
+  box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.05);
 }
 
 .checkoutProduct__image {
