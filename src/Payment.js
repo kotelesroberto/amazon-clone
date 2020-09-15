@@ -116,7 +116,8 @@ function Payment() {
           .set({
             // add all of these information
             basket: basket,
-            amount: 200,
+            amount: paymentIntent.amount,
+            created: paymentIntent.created,
           });
 
         // set flags
