@@ -105,32 +105,41 @@ function Payment() {
       // }).then( response => {})
 
       // (response) is exploded as ({ paymentIntent }) in the next
-      .then(({ paymentIntent }) => {
-        // paymentIntent = payment confirmation
+      .then((resp) => {
+        // Handle result.error or result.paymentIntent
+        if (resp.error) {
+          // set flags
+          setSucceeded(false);
+          setError(resp.error.message);
+          setProcessing(false);
+        } else {
+          const paymentIntent = resp.paymentIntent;
+          // paymentIntent = payment confirmation
 
-        // push into database
-        db.collection("users") //reach into database collection of users
-          .doc(user?.uid) // choose this user
-          .collection("orders") // choose their orders
-          .doc(paymentIntent.id) // wanna creat a document with payment id
-          .set({
-            // add all of these information
-            basket: basket,
-            amount: paymentIntent.amount,
-            created: paymentIntent.created,
+          // push into database
+          db.collection("users") //reach into database collection of users
+            .doc(user?.uid) // choose this user
+            .collection("orders") // choose their orders
+            .doc(paymentIntent.id) // wanna creat a document with payment id
+            .set({
+              // add all of these information
+              basket: basket,
+              amount: paymentIntent.amount,
+              created: paymentIntent.created,
+            });
+
+          // set flags
+          setSucceeded(true);
+          setError(null);
+          setProcessing(false);
+
+          dispatch({
+            type: "EMPTY_BASKET",
           });
 
-        // set flags
-        setSucceeded(true);
-        setError(null);
-        setProcessing(false);
-
-        dispatch({
-          type: "EMPTY_BASKET",
-        });
-
-        //as we don't want to permit the users going back to the payment page again, after payment let's use HISTORY REPLACE
-        history.replace("/orders");
+          //as we don't want to permit the users going back to the payment page again, after payment let's use HISTORY REPLACE
+          history.replace("/orders");
+        }
       });
 
     // const payload = await stripe();
@@ -201,7 +210,12 @@ function Payment() {
                 />
                 <button
                   disabled={
-                    !stripe || processing || disabled || succeeded || error
+                    !stripe ||
+                    processing ||
+                    disabled ||
+                    succeeded ||
+                    error ||
+                    !basket.length
                   }
                 >
                   <span>{processing ? "Processing..." : "Buy now"}</span>

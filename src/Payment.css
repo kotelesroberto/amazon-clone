@@ -66,6 +66,10 @@
   color: #111;
 }
 
+.payment__details > form > div > button:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
 /* Error */
 .payment__error {
   color: red;

@@ -18,6 +18,7 @@ import { auth } from "./firebase";
 // stripe
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
+import DialogInfo from "./DialogInfo";
 
 // Init stripe with publishable key
 const promise = loadStripe(
@@ -52,6 +53,7 @@ function App() {
   return (
     <Router>
       <div className="App">
+        <DialogInfo />
         <Switch>
           <Route path="/login">
             <Login />

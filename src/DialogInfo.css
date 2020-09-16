@@ -1,0 +1,15 @@
+.dialoginfo {
+}
+
+.dialoginfo__content {
+}
+
+.dialoginfo__content > h3 {
+  padding: 10px;
+  padding-bottom: 0;
+}
+
+.dialoginfo__content > p {
+  padding: 10px;
+  padding-top: 0;
+}
