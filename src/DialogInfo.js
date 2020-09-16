@@ -30,9 +30,6 @@ function DialogInfo() {
 
   return (
     <div className="dialoginfo">
-      <Button variant="outlined" color="primary" onClick={handleClickOpen}>
-        Slide in alert dialog
-      </Button>
       <Dialog
         open={open}
         TransitionComponent={Transition}
